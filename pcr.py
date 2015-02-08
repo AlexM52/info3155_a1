@@ -29,6 +29,7 @@ else:
   print str(lines)                    #print out resulting lines, to check
   for line in lines:                  #iterate through..
     line = line.strip('\n')            #stripping any newline chars..
+    line = line.split(':')          #split lines
     print line                          #print line to represent processing
   hfile.close()                      #close file after done
   print "File closed."              #output for verification
