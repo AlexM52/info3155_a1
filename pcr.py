@@ -51,13 +51,17 @@ def main():
     for x in range(len(solved)):
       lines.remove(solved[x])
     solved = []
+    print ""
     if len(lines)>0:
       #move on to dictionary/rainbow...pull from file (rnbo maybe can filter down on salt)
       print "Testing X"
-      # r, s = test_dict1(lines)
-    if len(lines)>0:
-      #next stage...
-      print "Testing Y"
+      r, lines = test_dict(lines)
+      results.extend(r)
+      print len(r), "hits, ", len(lines), " unsolved."
+    print ""
+    # if len(lines)>0:
+    #   #next stage...
+    #   print "Testing Y"
       
     
     print results
@@ -118,14 +122,14 @@ def test_UNs(line):
   #also need to try and collapse this down somehow
   return 0
   
-def test_dict1(line_list):
+def test_dict(line_list):
   lines = line_list
   results = []
   # solved = []
-  dict_file = open('password-2011.lst', 'r')
+  dict_file = open('password-list.lst', 'r')
   word_list = dict_file.readlines()
   dict_file.close()
-  print "Testing dictionary 1 ("+str(len(word_list))+" words)."
+  print "Testing dictionary ("+str(len(word_list))+" words)."
   for i in range(len(word_list)):
     # if len(lines)==len(solved):
     if len(lines)<1:
@@ -143,7 +147,9 @@ def test_dict1(line_list):
           results.append((un, word, h))#add salt to tuple, check last func as well
           # solved.append(lines[l])#...consider using while loop, so can dynamically remove solved items
           # #ok, do removal of solveds
-          
+          lines.remove(lines[l])
+        else:
+          l = l+1
           
           #some processing here to remove solved lines from list..etc
   return results, lines       #list of solved tuples, list of unsolved lines
