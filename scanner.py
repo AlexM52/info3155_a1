@@ -1,4 +1,4 @@
-# PASSWORDCRACKER.PY
+# SCANNER.PY
 # Group 1 (INFO3155)
 # 
 # Student ID's:
@@ -13,7 +13,7 @@ import sys, socket#,getopt
 
 def main(argv):
    if len(argv)!=2:
-     print 'Usage: python vscan <IP address> <"list, of, port, numbers">'
+     print 'Usage: python scanner.py <IP address> <"list, of, port, numbers">'
      sys.exit()
    else:
       tm_out = 5.0

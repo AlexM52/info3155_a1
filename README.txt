@@ -1,7 +1,7 @@
 README
 -------
 This file is has been packaged along with a password cracker (passwordcracker.py)
-and a portscanner(___) for Group 1's first assignment submission for course INFO3155
+and a portscanner(scanner.py) for Group 1's first assignment submission for course INFO3155
 at UWI MONA. 
 
 Student ID's:
@@ -24,7 +24,7 @@ where <filename> is the name of a file in the same directory as passwordcracker.
 containing username:hashedpassword rows.
 
 We used the file 'test' as an example file for testing the password cracker.
-The password cracker also makes use of a dictionary file, password-list.lst,
+The password cracker also makes use of a dictionary file, 'password-list.lst',
 based on password-2011.lst from http://www.openwall.com/passwords/wordlists/password-2011.lst
 These files have also been included.
 
